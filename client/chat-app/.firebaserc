@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "elad-kobi-chat2"
+  },
+  "targets": {
+    "elad-kobi-chat2": {
+      "hosting": {
+        "chat-app": [
+          "elad-kobi-chat2"
+        ]
+      }
+    }
+  }
+}
