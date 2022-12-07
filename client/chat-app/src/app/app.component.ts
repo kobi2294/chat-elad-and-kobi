@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { collection, doc, docData, Firestore } from '@angular/fire/firestore';
-import { map, Observable, of } from 'rxjs';
-import { Stuff } from './models/stuff.model';
+import { collection, collectionData, doc, docData, Firestore } from '@angular/fire/firestore';
+import { map, Observable } from 'rxjs';
+import { Message } from './models/message.model';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +9,13 @@ import { Stuff } from './models/stuff.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  env$!: Observable<string>;
+  messages$!: Observable<Message[]>;
 
 
   constructor(private db: Firestore){}
   ngOnInit(): void {
-    const docRef = doc(this.db, 'stuff/bla');
-    const bla$ = docData(docRef) as Observable<Stuff>;
-    this.env$ = bla$.pipe(
-      map(st => st.name)
-    );
+    const docRef = collection(this.db, 'messages');
+    this.messages$ = collectionData(docRef) as Observable<Message[]>;
   }
 
 
