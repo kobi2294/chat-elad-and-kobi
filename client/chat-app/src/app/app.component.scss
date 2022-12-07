@@ -1,0 +1,59 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    background: url('http://forums.crackberry.com/attachments/blackberry-10-wallpapers-f308/137432d1361639896t-z10-wallpaper-set-z10-music.jpg');    
+    align-items: flex-start;
+    padding: 30px;
+
+    .bubble{
+        min-width: 200px;
+        height: auto;
+        display: grid;
+        background: var(--p50);
+        border-radius: 4px;
+        box-shadow: 2px 8px 5px #000;
+        position: relative;
+        margin: 0 0 25px;
+        font-size: 20px;
+
+        .txt{
+          padding: 8px 10px 8px 10px;
+          display: flex;
+          flex-direction: column;
+          .name{
+            font-size: 0.8em;
+            font-weight: 600;
+            margin: 0 0 4px;
+            color: var(--p500);
+          }
+          .message{
+            margin: 0;
+            color: #2b2b2b;
+          }
+          .timestamp{
+            align-self: flex-end;
+            font-size: 11px;
+            bottom: 8px;
+            right: 10px;
+            text-transform: uppercase; color: #999
+          }
+        }
+        .bubble-arrow {
+          position: absolute;
+          width: 0;
+          bottom:37px;
+          left: -16px;
+          height: 0;
+        }
+        .bubble-arrow:after {
+          content: "";
+          position: absolute;
+          border: 0 solid transparent;
+          border-top: 9px solid var(--p50);
+          border-radius: 0 20px 0;
+          width: 15px;
+          height: 30px;
+          transform: rotate(145deg);
+        }
+      }    
+}

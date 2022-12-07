@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+@import "material-common";
+
+$plt-primary: mat.define-palette($mat-purple);
+$plt-accent: mat.define-palette($mat-lime, A200, A100, A400);
+$plt-warn: mat.define-palette($mat-red);
+
+$theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $plt-primary,
+      accent: $plt-accent,
+      warn: $plt-warn,
+    ),
+  )
+);
+
+@include material-common($plt-primary, $plt-accent, $plt-warn, $theme);

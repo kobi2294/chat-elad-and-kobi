@@ -1,5 +1,8 @@
-<h1>Messages</h1>
-<div *ngFor="let message of (messages$ | async)">
-    <h2>{{message.sender}}</h2>
-    <p>{{message.content}}</p>
+<div class="bubble" *ngFor="let msg of (messages$ | async)">
+    <div class="txt">
+        <div class="name">{{msg.sender}}</div>
+        <div class="message">{{msg.content}}</div>
+        <div class="timestamp">{{msg.timestamp | date:'shortTime'}}</div>
+    </div>
+    <div class="bubble-arrow"></div>
 </div>
